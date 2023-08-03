@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    nav {
+        background-color: black;
+        position: sticky;
+        top: 0;
+        cursor: pointer;
+    }
+    ul {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        gap: 5%;
+        padding: 2%;
+        font-size: 140%;
+    }
+    li {
+        list-style: none;
+    }
+    a {
+        color: white;
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 10px;
+    }
+    html {
+        scroll-behavior: smooth;
+        transition: all 2s smooth;
+    }
+    div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 100vh;
+        font-size: 400%;
+        scroll-snap-align: start;
+        border-bottom: 1px solid #000;
+    }
+    .active {
+        color: black;
+        background-color: #fff;
+    }
+    section {
+        scroll-snap-type: mandatory;
+        
+    }
+    
+   
+</style>
+<body>
+    <nav>
+        <ul>
+            <li ><a href="#" class="active">Home</a></li>
+            <li ><a href="#Contact">Contact</a></li>
+            <li ><a href="#Service">Service</a></li>
+            <li ><a href="#About">About</a></li>
+        </ul>
+    </nav>
+  <section>
+    <div id="#">
+        Home
+    </div>
+    <div id="Contact">
+        Contact
+    </div>
+    <div id="Service">
+        Service
+    </div>
+    <div id="About">
+        About
+    </div>
+  </section>
+
+    <script>
+        let option = document.querySelector('ul').querySelectorAll("a")
+        option.forEach(
+            element => {
+                element.addEventListener("click", (e)=>{
+                    option.forEach(nav =>nav.classList.remove("active"))
+                    e.target.setAttribute("class", "active")
+                })
+            }
+        )
+        
+    </script>
+</body>
+</html>
